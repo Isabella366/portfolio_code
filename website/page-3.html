@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Cafe Exuberant</title>
+	<link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
+	<link href="Styles/style_page_3.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class ="wrapper">
+
+		<header class="main_head">
+			<h1>Cafe Exuberant</h1>
+		</header>
+
+		<nav class="main_nav">
+			<ul>
+				<li class="linav"><a href="#">Home</a></li>
+				<li class="linav"><a href="#">About Us</a></li>
+				<li class="linav"><a href="#">Menus</a></li>
+				<li class="linav"><a href="#">Products</a></li>
+				<li class="linav"><a href="#">Suppliers</a></li>
+				<li class="linav"><a href="#">Social Media</a></li>
+				<li class="linav"><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<article class="content">
+			<h2>Coffee Subscription Service</h2>
+			
+			<form>
+
+				<p> Required Fields are followed by <strong><abbr title="Required">*</abbr></strong>. </p>
+
+				<section>
+					<fieldset>
+						<legend>About You:</legend>
+						<ul class="special">
+							<li>
+								<label for= "title_1">
+									<input type="radio" name="title" id="title_1">
+									Mr
+								</label>
+							</li>
+
+							<li>
+								<label for="title_2">
+									<input type="radio" name="title" id="title_2">
+									Mrs
+								</label>
+							</li>
+
+							<li>
+								<label for="title_3">
+									<input type="radio" name="title" id="title_3">
+									Ms
+								</label>
+							</li>
+
+							<li>
+								<label for="title_4">
+									<input type="radio" name="title" id="title_4">
+									Miss
+								</label>
+							</li>
+
+							<li>
+								<label for="title_5">
+									<input type="radio" name="title" id="title_5">
+									Mx
+								</label>
+							</li>
+
+						</ul>
+
+						<ul>
+							<li>
+								<label for="first_name">
+									First Name:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="text" id="first_name" name="user_first_name">
+								</label>
+							</li>
+
+
+							<li>
+								<label for="surname">
+									Surname:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="text" id="surname" name="user_surname">
+								</label>
+							</li>
+
+							<li>
+								<label for="e-mail">
+									E-mail:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="email" id="e-mail" name="user_e-mail">
+								</label>
+							</li>
+
+							<li>
+								<label for="phone_number">Phone Number:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="tel" id="phone_number" name="user_phone_number">
+								</label>
+							</li>
+
+							<li>
+								<label for="addressline">
+									First Line of Address:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="text" id="addressline" name="address">
+								</label>
+							</li>
+
+							<li>
+								<label for="town">
+									Town:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="text" id="town" name="town">
+								</label>
+							</li>
+
+							<li>
+								<label for="postcode">
+									Postcode:
+									<strong><abbr title="Required">*</abbr></strong>
+									<input type="text" id="postcode" name="postcode">
+								</label>
+							</li>
+						</ul>
+					</fieldset>
+
+					<fieldset>
+						<legend>Product Selction</legend>
+						<p> Please add your favourite coffees to the list below, this will help us choose what coffees to send you! </p>
+						    <div>
+      							<label for="item">Favourite Coffees</label>
+     							 <input type="text" name="item" id="item" class="fav_input">
+      							<button type="button" class="fav_button">Add item</button>
+      						</div>
+      							<ul class="fav_list">
+
+    							</ul>
+
+    					<p>On a scale of 1 to 100 how strong do you like your Coffee?</p>
+
+    					<label for="strength">
+    						Coffee Strength
+    					<input type="range" list="tickmarks" id="strength" name="coffee_strength">
+<!-- The hash marks are supported in google chrome but not in Firefox.-->
+    					<datalist id="tickmarks">
+    						<option value="0"></option>
+    						<option value="10"></option>
+    						<option value="20"></option>
+    						<option value="30"></option>
+    						<option value="40"></option>
+    						<option value="50"></option>
+    						<option value="60"></option>
+    						<option value="70"></option>
+    						<option value="80"></option>
+    						<option value="90"></option>
+    						<option value="100"></option>
+    					</datalist>
+    					</label>
+
+    						
+
+    					<p>How frequently would you like your coffee delivered?</p>	
+
+    					<ul>
+    						<li>
+    							<label for="frequency">
+    								Frequency
+    								<strong><abbr title="Required">*</abbr></strong>
+    								<select id="frequency" name="frequency">
+    									<option value="">--Please Choose An Option --</option>
+    									
+    									<option value="Daily">Daily</option>
+    									<option value="Weekly"> Weekly</option>
+    									<option value="Fortnightly"> Fortnightly</option>
+    									<option value="Monthly">Monthly</option>
+    									<option value="Quarterly"> Quarterly</option>
+    									<option value="Once">Once</option>
+    								</select>	
+    							</label>
+    						</li>
+    					</ul>
+    				</fieldset>
+
+    				<fieldset>
+    					<legend>Your Order</legend>
+    					<p class="order_para"></p>
+    				</fieldset>
+
+    				<fieldset>
+    					<legend>Payment Infomation</legend>
+
+    					<ul>
+    						<li>
+    							<label for="card">
+    								Card Type:
+    								<strong><abbr title="Required">*</abbr></strong>
+    							
+    							<select id="card" name="usercard">
+    								<option value="">--Please Choose An Option --</option>
+    								<option value="visa"> Visa </option>
+    								<option value="mc"> Mastercard </option>
+    								<option value="amex"> American Express</option>
+    							</select>
+    							</label>
+    						</li>
+
+    						<li>
+    							<label for="number">
+    								Card number:
+    								<strong><abbr title="required">* </abbr></strong>
+    							
+    							<input type="text" id="number" name="card_number">
+    							</label>
+
+    						</li>
+
+    						<li>
+    							<label for="date">
+    								Expiration Date
+    							
+    							<input type="date" id="date" name="expiration">
+    							</label>
+    						</li>
+    					</ul>
+
+    				</fieldset>
+
+    				<p class="Order"><button  type="submit">Place Order</button></p>
+
+				</section>
+
+
+
+				
+
+			</form>
+
+		</article>
+
+		<footer class="main_footer">Cafe Exuberant 2020
+			<p>
+			<button class=totoppage>Go To Top</button>
+			<button class=dark> Dark Mode </button>
+			<button class=contrastmode> High Contrast Mode</button>
+			</p>
+		</footer>
+	</div>
+
+<script src="Scripts/script_page_3.js"></script>
+</body>
+</html>

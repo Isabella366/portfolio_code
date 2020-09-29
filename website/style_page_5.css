@@ -1,0 +1,279 @@
+
+
+html{
+	font-family: 'Gotu', sans-serif;
+	background-image: url(../Images/background_marble.jpg);
+}
+
+body{
+	margin: 0;
+}
+
+section{
+	flex-direction: row;
+	display:flex;
+	height: 100vh;
+}
+
+header{
+	display: flex;
+	align-items: center;
+	width: 250px;
+	background-color: #01295F;
+	height: 100vh;
+
+	
+}
+
+h1{
+	display: flex;
+	transform: rotate(-90deg);
+	color: white;
+	font-size: 62px;
+	margin: 0;
+	height: 250px;
+	
+}
+
+nav{
+	display: flex;
+	align-items: center;
+	width: 200px;
+	height: 100vh;
+
+	
+
+}
+
+nav ul{
+	color: white;
+	list-style-type: none;
+	padding: 0;
+	width: 200px;
+
+}
+
+nav li{
+	color: white;
+	padding: 5px 0;
+	transform: rotate(-20deg);
+	font-size: 24px;
+
+}
+
+nav a{
+	color: black;
+}
+
+nav a:hover{
+	text-decoration: underline;
+	color: #01295F;
+}
+
+article{
+	display: flex;
+	margin:5px;
+	flex-shrink: 0;
+	height: 100vh;
+}
+
+img{
+	flex-wrap: wrap;
+	width: 640px;
+	height: 426px;
+
+
+}
+
+.Welcome{
+	flex-wrap: wrap;
+	width: 650px;
+	
+}
+
+.Welcome  img{
+	align-items: start;
+
+}
+
+.About_us{
+	flex-wrap: wrap;
+	width: 450px;
+	height: 100vh;
+
+	
+}
+
+h2{
+	flex-wrap: wrap;
+	padding: 5px;
+	margin: 0;
+	height: 50px;
+}
+
+.Menu{
+	flex-wrap: wrap;
+	width: 450px;
+	height: 100vh;
+
+	
+}
+
+
+.Menu ul{
+	flex-wrap: wrap;
+	color: white;
+	list-style-type: none;
+	padding: 0;
+	width: 250px;
+	height: 100vh;
+	margin: 50px 0;
+
+}
+
+.Menu li{
+	flex-wrap: wrap;
+	color: white;
+	padding: 5px 0;
+	transform: rotate(-20deg);
+	font-size: 24px;
+
+}
+
+.Menu a{
+	color: black;
+}
+
+.Menu a:hover{
+	text-decoration: underline;
+	color: #01295F;
+}
+
+.Gallery{
+	flex-wrap: wrap;
+	width: 650px;
+	height: 100vh;
+
+}
+
+.displayed-img {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 480px;
+  margin: auto;
+}
+
+.thumb-bar img {
+  display: block;
+  width: 20%;
+  height: 20%;
+  float: left;
+  cursor: pointer;
+}
+
+.Contact_us{
+	flex-wrap: wrap;
+	width: 450px;
+	height: 100vh;
+	
+}
+
+
+.Contact_us ul{
+	list-style-type: none;
+}
+
+.Contact_us li{
+	font-family: 'Gotu', sans-serif;
+	font-size: 14px;
+
+}
+
+.Contact_us form{
+	width: 400px;
+
+}
+
+.Contact_us fieldset{
+	width: 400px;
+}
+
+.Opening_times{
+	flex-wrap: wrap;
+	width: 450px;
+	height: 100vh;
+	
+}
+
+.Opening_times p{
+	margin: 0;
+	width: 400px;
+	height: 20px;
+	padding: 10px;
+
+}
+
+.Social_media{
+	flex-wrap: wrap;
+	width: 450px;
+	height: 100vh;
+	
+}
+
+.Social_media img{
+	width: 200px;
+	height: 200px;
+}
+
+p{
+	margin: 20px;
+}
+
+
+
+footer{
+	display: flex;
+	flex-wrap: wrap;
+	width: 500px;
+	height: 100vh;
+	align-items: center;
+
+}
+
+footer p{
+	margin: 0;
+	display: flex;
+	transform: rotate(-90deg);
+	height: 30px;
+	width: 200px;
+
+}
+
+.toTop{
+	position: fixed;
+	bottom: 1vh;
+	right: 1vw;
+	z-index: 3;
+	background-color:#01295F;
+	color: white; 
+}
+
+
+
+
+@media(max-height:800px){
+
+	.Menu li{
+	color: white;
+	padding:0;
+	transform: rotate(0deg);
+	font-size: 20px;
+
+	}
+	.Gallery{
+		display: none;
+	}
+
+	
+}

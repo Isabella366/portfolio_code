@@ -1,0 +1,373 @@
+/* General Layout */
+html{
+margin: 0;
+padding: 0;
+font-size: 14px;
+background-color: #f2ddc4;	
+}
+
+body{
+	width: 80%;
+	min-width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+p{
+	font-family:'Open Sans Condensed', sans-serif;
+	color: black;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+input {
+	font-family:'Open Sans Condensed', sans-serif;
+	color: black;
+}
+
+li{
+	font-family:'Open Sans Condensed', sans-serif;
+	color: black;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+table{
+	font-family:'Open Sans Condensed', sans-serif;
+	color: black;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+label{
+	font-family:'Open Sans Condensed', sans-serif;
+	color: black;
+}
+
+h1{
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 42px;
+
+}
+
+h2{
+  letter-spacing: 1px;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+nav > ul{
+  display: block;
+  width: 100%;
+  list-style: none;
+  margin-left: 16rem;
+}
+
+nav a{
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  padding: 2px;
+  margin: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #CB904D;
+  background-color: white;
+}
+
+nav li{
+  display:inline;
+  text-align: center;
+}
+
+nav > form{
+  display:block; 
+  margin-bottom:20px;
+}
+
+details{
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+  font-size: 16px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+summary{
+  font-weight: bold;
+  font-size: 16px;
+  padding: .5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+details[open]{
+  padding: .5em;
+  font-size: 16px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  font-size: 16px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+div[class="secondary"] a{
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+  padding: 2px;
+  margin: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #CB904D;
+  text-align: center;
+
+
+}
+div[class="secondary"] ul{
+  display: block;
+  list-style: none;
+  }
+
+/*Header Layout*/
+div[class="nav"], article, footer, .secondary {
+  background-color: white;
+}
+
+article, footer, .secondary {
+  padding: 10px 30px;
+}
+
+article {
+  margin-right: 10px;
+}
+
+div[class="nav"] {
+  height: 50px;
+  background-color:#A8763E;
+  display: flex;
+  padding: 1% 0;
+  margin-bottom: 10px;
+}
+
+div[class="nav"] ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+div[class="nav"] li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+div[class="nav"] a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+
+}
+
+div[class="nav"] .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+.search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.search input[type="search"] {
+  flex: 3;
+}
+
+.search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #A8763E;
+  border: 0;
+  color: white;
+}
+
+/* Stying the links */
+a{
+  outline:none;
+  text-decoration: none;
+  border: 2px solid;
+  color: #CB904D;
+}
+
+a:link{
+  border-bottom: 1px solid;
+  color: #A8763E;
+
+}
+
+a:visited{
+  border-bottom: 1px solid;
+  color: #75485E;
+
+}
+
+a:focus{
+  border-bottom:1px solid;
+  color: #CB904D;
+
+}
+
+a:hover{
+  border-bottom: 1px solid;
+  color: #CB904D;
+}
+
+a:active{
+  border-bottom: 1px solid;
+  color: #CB904D;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+}
+
+article {
+  flex: 5;
+}
+
+.secondary {
+  flex: 2;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+/* Table Styling */
+
+table {
+  width: 100%;
+  background-color: #dde;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #def;
+}
+
+/* styling content images and audio */
+
+img, audio {
+  display: block;
+  margin: 0 auto;
+  height: 500px;
+  width: 700px;
+}
+
+audio {
+  width: 500px;
+  height: 100px;
+}
+
+/* Comments styling */
+
+.comments {
+  background-color: #f2ddc4;
+  padding: 10px;
+}
+
+.show-hide {
+  cursor: pointer;
+}
+
+.comments font[size="6"] {
+  font-size: 2rem;
+}
+
+.comments font[size="6"]:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+}
+
+.comment-form label {
+  align-self: center;
+  flex: 2;
+  text-align: right;
+}
+
+.comment-form input {
+  margin-left: 1rem;
+  flex: 6;
+}
+
+.show-hide {
+  text-align: center;
+  width: 150px;
+}
+
+.comment-form input, .comment-form label, .show-hide {
+  font-size: 1.6rem;
+  line-height: 32px;
+}
+
+.comment-form input[type="submit"], .show-hide {
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.comment-container {
+  margin-top: 0;
+}
+
+.comment-container li {
+  list-style-type: none;
+  display: flex;
+}
+
+.comment-container li p:nth-child(1) {
+  flex: 1;
+  font-weight: bold;
+}
+
+.comment-container li p:nth-child(2) {
+  flex: 5;
+}
+

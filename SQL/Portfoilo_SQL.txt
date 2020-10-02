@@ -1,0 +1,134 @@
+--create the vet table
+DROP TABLE vet cascade constraints;
+CREATE TABLE vet(
+vet_id    NUMBER(8) PRIMARY KEY,
+first_name    VARCHAR2(30) NOT NULL,
+surname    VARCHAR2(30) NOT NULL,
+age    NUMBER(2) NOT NULL,
+length_of_service    NUMBER(2) NOT NULL,
+species_of_care    VARCHAR2(30) NOT NULL,
+job_title    VARCHAR2(20) NOT NULL,
+salary    NUMBER(7) NOT NULL);
+
+--create the animal table
+DROP TABLE animal cascade constraints;
+CREATE TABLE animal(
+animal_id    NUMBER(8) PRIMARY KEY,
+name        VARCHAR2(30) NOT NULL,
+location    VARCHAR2(20)NOT NULL,
+species    VARCHAR2(30) NOT NULL,
+age        NUMBER(3) NOT NULL,
+origin    VARCHAR2(30) NOT NULL,
+diet       VARCHAR2(20) NOT NULL,
+vet_id    NUMBER(8) REFERENCES vet(vet_id));
+
+--create the keeper table
+DROP TABLE keeper cascade constraints;
+CREATE TABLE keeper(
+keeper_id    NUMBER(8) PRIMARY KEY,
+first_name    VARCHAR2(20) NOT NULL,
+surname    VARCHAR2(20)NOT NULL,
+age    VARCHAR2(2)NOT NULL,
+length_of_service NUMBER(2)NOT NULL,
+species_of_care    VARCHAR(20)NOT NULL,
+job_title    VARCHAR(20)NOT NULL,
+salary    NUMBER(7)NOT NULL);
+
+--create the patrol table
+DROP TABLE patrol cascade constraints;
+CREATE TABLE patrol(
+patrol_id    NUMBER(8)PRIMARY KEY,
+location    VARCHAR2(20)NOT NULL,
+food_level    VARCHAR2(20)NOT NULL,
+water_level    VARCHAR2(20)NOT NULL,
+health_level    VARCHAR2(20)NOT NULL,
+stress_level    VARCHAR2(20)NOT NULL,
+concerns    VARCHAR2(30)NOT NULL,
+animal_id NUMBER(8) REFERENCES animal(animal_id),
+keeper_id NUMBER(8)REFERENCES keeper(keeper_id));
+
+--Insert data into the vet table
+INSERT INTO vet VALUES (36257628, 'Marina', 'Mccormack',42, 6,'Cats','Vet', 32000);
+INSERT INTO vet VALUES (36257629, 'Fintan', 'Russell', 36, 4, 'Birds', 'Associate Vet', 28000);
+INSERT INTO vet VALUES (36257630, 'Pheobe', 'Trujillo', 33, 5, 'Aquatic Mammals', 'Associate Vet', 28000);
+
+--Insert data into the animal table
+INSERT INTO animal VALUES (22665379, 'Vincent', 'Savannah Zone', 'Lion', 4,'Breeding Program','Carnivore',36257628);
+INSERT INTO animal VALUES (22555380, 'Freddie', 'Salt Lake', 'Flamingo', 6, 'Adoption', 'Omnivore', 36257629);
+INSERT INTO animal VALUES (22555381, 'Wilbert', 'Salt Lake', 'Flamingo', 5, 'Adpotion', 'Omnivore', 36257629);
+INSERT INTO animal VALUES (22555382, 'Henry', 'Salt Lake', 'Flamingo', 7, 'Adpotion', 'Ominvore', 36257629);
+INSERT INTO animal VALUES (22555383, 'Abbey', 'Salt Lake', 'Flamingo', 1, 'Breeding Program', 'Ominvore', 36257629);
+INSERT INTO animal VALUES (22555384, 'Poppey', 'Salt Lake', 'Flamingo', 2, 'Breeding Program', 'Ominvore', 36257629);
+INSERT INTO animal VALUES (22555385, 'Cathy' ,'Savannah Zone', 'Lion', 5, 'Adoption', 'Carnivore', 36257628);
+INSERT INTO animal VALUES (22555386, 'Adam', 'Aquatic Area', 'Otter', 3, 'Adpotion', 'Carnivore',36257630);
+INSERT INTO animal VALUES (22555387, 'Elder', 'Aquatic Area', 'Otter', 4, 'Adoption', 'Carnivore', 36257630);
+
+--Insert data into the keeper table
+INSERT INTO keeper VALUES (34528746, 'Atticus', 'Blanchard', 47, 7,'Lion','Keeper',30000);
+INSERT INTO keeper VALUES (34528747, 'Ivie','Trejo', 55, 4, 'Lion', 'Assistant-Keeper', 28000);
+INSERT INTO keeper VALUES (34538748, 'Reema','Wong', 43, 6, 'Flamingo', 'Keeper', 30000);
+INSERT INTO keeper VALUES (34538749, 'Layla-Rose', 'Hester',27,4,'Flamingo', 'Assistant-Keeper', 28000);
+INSERT INTO keeper VALUES (34538750, 'Stephen', 'Esparza', 31, 3,'Flamingo', 'Assistant-Keeper', 28000);
+INSERT INTO keeper VALUES (34538751, 'Paolo', 'Savage', 39, 10,'Otter', 'Keeper', 30000);
+INSERT INTO keeper VALUES (34538752, 'Niamh', 'Murray',24, 3,'Otter', 'Assistant-Keeper', 28000);
+
+--Insert data into the patrol table
+INSERT INTO patrol VALUES (12345678, 'Savannah Zone', 'High','Medium','High','Low','None',22665379,34528747);
+INSERT INTO patrol VALUES (12345679, 'Savannah Zone', 'Low', 'High', 'High', 'Medium', 'None',22555385, 34528746);
+INSERT INTO patrol VALUES (12345680, 'Salt Lake', 'Medium', 'High', 'Medium', 'Low', 'None', 22555381,34538748);
+INSERT INTO patrol VALUES (12345681, 'Salt Lake', 'Medium', 'Medium', 'High', 'Low', 'None',22555382,34538748 );
+INSERT INTO patrol VALUES (12345682, 'Aquatic Area', 'High', 'High', 'Medium', 'Low', 'None',22555386, 34538751);
+
+-- SELECT TABLES 
+SELECT *
+FROM vet;
+
+SELECT *
+FROM keeper;
+
+SELECT *
+FROM animal
+ORDER BY name;
+
+SELECT patrol_id, stress_level, animal_id, keeper_id
+FROM patrol
+ORDER BY patrol_id;
+
+
+--SELECT WHERE
+SELECT first_name,surname, length_of_service
+FROM keeper
+WHERE length_of_service > 5;
+
+--How many of each animal?
+SELECT species, COUNT(species)
+FROM animal
+GROUP BY species;
+
+--Display the animals and there assigned vets names
+SELECT a.name,a.vet_id, v.first_name,v.surname
+FROM vet v, animal a
+WHERE v.vet_id = a.vet_id;
+
+--Display the keepers names, roles and patrols where the water level was high. 
+SELECT patrol.patrol_id, patrol.water_level, keeper.first_name,keeper.surname,keeper.job_title
+FROM patrol, keeper
+WHERE patrol.keeper_id = keeper.keeper_id
+AND patrol.water_level = 'High';
+
+--How many animals are in each area
+SELECT location,COUNT(location)
+FROM animal
+GROUP BY location
+HAVING COUNT(location)>2;
+
+--Who earns more than the average salary
+SELECT first_name,surname
+FROM keeper 
+WHERE salary > (SELECT AVG(salary)FROM keeper);
+
+
+
+
+
+
